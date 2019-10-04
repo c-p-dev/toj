@@ -1,0 +1,41 @@
+<h1>Register</h1>
+<div class="register-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">   
+
+    <label for="firstName">First Name</label>
+    <input type="text" name="firstName" formControlName="firstName" />
+    <span class="error" *ngIf="form.get('firstName').invalid && (form.get('firstName').dirty || form.get('firstName').touched) ">Mising  First Name</span>
+    <br>
+
+    <label for="lastName">Last Name</label>
+    <input type="text" name="lastName" formControlName="lastName" />
+    <span class="error" *ngIf="form.get('lastName').invalid && (form.get('lastName').dirty || form.get('lastName').touched) ">Missing Last Name</span>
+    <br>
+
+    <label for="gender">Gender</label>
+      <select name="gender" formControlName="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <span class="error" *ngIf="form.get('gender').invalid && (form.get('gender').dirty || form.get('gender').touched) ">Missing Gender</span>
+    <br>
+  
+    <label for="email">email</label>
+    <input type="text" name="email" formControlName="email" />
+    <span class="error" *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched) ">Missing Email</span>
+    <br>
+
+    <label for="password">Password</label>
+    <input type="password" name="password" formControlName="password">
+    <span class="error" *ngIf="form.get('password').invalid && (form.get('password').dirty || form.get('password').touched) ">Missing Password</span>
+    <br>
+
+    <label for="confirmPassword">Confirm Password</label>
+    <input type="password" name="confirmPassword" formControlName="confirmPassword">
+    <span class="error" *ngIf="form.get('confirmPassword').invalid && (form.get('confirmPassword').dirty || form.get('confirmPassword').touched) ">password is not the same</span>
+    <br>
+    
+    <button [disabled]="!form.valid" type="submit">Submit</button>
+  </form>
+</div>
+

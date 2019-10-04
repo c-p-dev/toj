@@ -1,0 +1,18 @@
+<h1>Login</h1>
+<div class="register-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">   
+
+    <label for="email">Email </label>
+    <input type="text" name="email" formControlName="email" />
+    <span class="error" *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched) ">Mising  First Name</span>
+    <br>
+
+    <label for="password">Password</label>
+    <input type="password" name="password" formControlName="password" />
+    <span class="error" *ngIf="form.get('password').invalid && (form.get('password').dirty || form.get('password').touched) ">Missing Last Name</span>
+    <br>
+
+    <button [disabled]="!form.valid" type="submit">Login In</button>
+    <button  type="button" (click)="openGoogleLogin($event)">Google Login</button>
+  </form>
+</div>

@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@charset "UTF-8";
+
+// Variables
+@import "./assets/styles/variables.scss";
+
+body{
+    margin: 0px;
+}

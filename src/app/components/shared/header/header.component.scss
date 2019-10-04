@@ -1,0 +1,20 @@
+@import "../../../../styles.scss";
+
+nav{
+    background: $color-main-700 ;
+    display: flex;
+    color:$white-100;
+    .logo {
+        width: 80%;
+    }
+    ul{
+        display: flex;
+        list-style-type: none;
+        float: right;
+        margin: 20px;
+        li {
+            padding: 10px
+        };
+    }
+     
+}
